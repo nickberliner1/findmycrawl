@@ -2,6 +2,7 @@
     <b-navbar type="dark" variant="dark" class="navbar">
         <b-navbar-nav>
             <b-nav-item href="#">Home</b-nav-item>
+            <nuxt-link to="/events">Events</nuxt-link>
         </b-navbar-nav>
     </b-navbar>
 </template>
