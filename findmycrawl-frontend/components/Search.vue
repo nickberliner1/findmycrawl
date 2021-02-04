@@ -1,10 +1,10 @@
 <template>
     <div>
-        <input
+        <b-form-input
             class="search"
             placeholder="Search your city"
             :search="search"
-        />
+        ></b-form-input>
     </div>
 </template>
 
