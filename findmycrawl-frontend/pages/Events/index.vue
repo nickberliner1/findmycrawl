@@ -1,21 +1,21 @@
 <template>
     <div>
-        <ul v-for="event in events"
+        <Event 
+            v-for="event in events" 
             :key="event.id"
             :id="event.id"
-        >
-            <li>
-                {{ event.title }}
-            </li>
-        </ul>
+            :event="event.event"
+        />
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import Event from '../../components/Event.vue';
 
 
 export default {
+  components: { Event },
     
     data() {
         return {

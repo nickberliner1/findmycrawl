@@ -1,8 +1,10 @@
 <template>
     <b-navbar type="dark" variant="dark" class="navbar">
         <b-navbar-nav>
-            <b-nav-item href="#">Home</b-nav-item>
+            <nuxt-link to="/">Home</nuxt-link>
+            <nuxt-link to="/about">About</nuxt-link>
             <nuxt-link to="/events">Events</nuxt-link>
+
         </b-navbar-nav>
     </b-navbar>
 </template>
