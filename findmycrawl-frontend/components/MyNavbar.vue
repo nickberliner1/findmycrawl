@@ -1,10 +1,9 @@
 <template>
-    <b-navbar type="dark" variant="dark" class="navbar">
-        <b-navbar-nav>
-            <nuxt-link to="/">Home</nuxt-link>
-            <nuxt-link to="/about">About</nuxt-link>
-            <nuxt-link to="/events">Events</nuxt-link>
-
+    <b-navbar type="dark" variant="dark">
+        <b-navbar-nav class="navbar">
+            <nuxt-link to="/" class="link">Home</nuxt-link>
+            <nuxt-link to="/about" class="link">About</nuxt-link>
+            <nuxt-link to="/events" class="link">Events</nuxt-link>
         </b-navbar-nav>
     </b-navbar>
 </template>
@@ -18,8 +17,12 @@ export default {
 <style scoped>
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding-bottom: 1rem;
+}
+
+.link {
+    margin-right: 2rem;
 }
 </style>

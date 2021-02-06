@@ -1,7 +1,7 @@
 <template>
     <nuxt-link :to="'events/' + id">
         <div class="event">
-            <p>{{ event }}</p>
+            <p>{{ event.title }}</p>
         </div>
     </nuxt-link>
 </template>
@@ -14,5 +14,10 @@ export default {
 </script>
 
 <style scoped>
-
+.event {
+    padding: 1rem;
+    border: 1px solid gray;
+    margin: 1rem;
+    color: black;
+}
 </style>
