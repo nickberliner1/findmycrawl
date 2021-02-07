@@ -1,7 +1,13 @@
 <template>
     <nuxt-link :to="'events/' + id">
         <div class="event">
-            <p>{{ event.title }}</p>
+            <h6>{{ event.title }}</h6>
+            <b-img-lazy 
+                thumbnail 
+                fluid 
+                :src="event.cover_image_url"
+                class="cover-image"
+            ></b-img-lazy>
         </div>
     </nuxt-link>
 </template>
@@ -19,5 +25,12 @@ export default {
     border: 1px solid gray;
     margin: 1rem;
     color: black;
+    flex: 1 1 30%;
+}
+
+.cover-image {
+    width: auto;
+    height: auto;
+    overflow: hidden;
 }
 </style>
