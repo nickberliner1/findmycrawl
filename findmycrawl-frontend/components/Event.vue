@@ -29,7 +29,7 @@ export default {
 }
 
 .cover-image {
-    width: auto;
+    width: 10rem;
     height: auto;
     overflow: hidden;
 }
