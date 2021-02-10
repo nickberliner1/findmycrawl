@@ -1,13 +1,13 @@
 <template>
     <nuxt-link :to="'events/' + id">
         <div class="event">
-            <h6>{{ event.title }}</h6>
-            <b-img-lazy 
+            <h6>{{ event }}</h6>
+            <!-- <b-img-lazy 
                 thumbnail 
                 fluid 
-                :src="event.cover_image_url"
+                :src="cover_image_url"
                 class="cover-image"
-            ></b-img-lazy>
+            ></b-img-lazy> -->
         </div>
     </nuxt-link>
 </template>

@@ -4,14 +4,14 @@
             v-for="event in events" 
             :key="event.id"
             :id="event.id"
-            :event="event"
+            :event="event.event"
         />
     </div>
 </template>
 
 <script>
 import Event from '../../components/Event.vue';
-
+import axios from 'axios';
 
 export default {
   components: { Event },
@@ -25,30 +25,32 @@ export default {
     },
 
     async created() {
-        this.events = await fetch(
-            `https://api.musement.com/api/v3/venues/164/activities?&page=${this.currentPage}&limit=${this.perPage}&offset=0`,
-        {
-            "method": "GET",
-            headers: {
-                "content-type": "application/json"
-            }
-        }).then(res => res.json())
-	    .catch(error => {
-		    console.log(error);
-	    });
-        // const config = {
+        // this.events = await fetch(
+        //     `https://api.musement.com/api/v3/venues/164/activities?&page=${this.currentPage}&limit=${this.perPage}&offset=0`,
+        // {
+        //     "method": "GET",
         //     headers: {
         //         "content-type": "application/json"
         //     }
-        // };
+        // }).then(res => res.json())
+	    // .catch(error => {
+		//     console.log(error);
+        // });
+        
+        const config = {
+            headers: {
+                "content-type": "application/json"
+            }
+        };
 
-        // try {
-        //     this.events = await axios.get('https://sandbox.musement.com/api/v3/activities?offset=0&limit=10', config);
-            
-        //     console.log(this.events)
-        // } catch (err) {
-        //     console.log(err);
-        // }
+        try {
+            const res = await axios.get('https://sandbox.musement.com/api/v3/activities?offset=0&limit=10', config);
+            this.events = res.data.data;
+            console.log(this.events)
+        } catch (err) {
+            console.log(err);
+        }
+
     },
 
     
