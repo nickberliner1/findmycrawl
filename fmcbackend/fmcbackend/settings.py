@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', # API package
-    'api.apps.ApiConfig'
+    'api.apps.ApiConfig', # API file
+    'corsheaders' # CORS
 ]
 
 MIDDLEWARE = [
@@ -49,7 +50,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware' # CORS
 ]
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'https://localhost:3000',
+    'https://localhost:8000',
+    'https://localhost:8080'
+)
 
 ROOT_URLCONF = 'fmcbackend.urls'
 

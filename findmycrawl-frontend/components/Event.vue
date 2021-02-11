@@ -11,7 +11,7 @@
                 class="cover-image"
             ></b-img-lazy>
             <div class="info">
-                <h5>{{ title }}</h5>
+                <h5>{{ name }}</h5>
             </div>
         </div>
     </nuxt-link>
@@ -20,7 +20,7 @@
 <script>
 export default {
     name: "Event",
-    props: ['id', 'title', 'pic', 'city']
+    props: ['id', 'event', 'name', 'pic', 'city']
 }
 </script>
 

@@ -4,7 +4,8 @@
             v-for="event in events" 
             :key="event.id"
             :id="event.id"
-            :title="event.title"
+            :event="event"
+            :name="event.name"
             :pic="event.cover_image_url"
             :city="event.city"
         />
@@ -16,7 +17,9 @@ import Event from '../../components/Event.vue';
 import axios from 'axios';
 
 export default {
-  components: { Event },
+    components: { 
+        Event 
+    },
     
     data() {
         return {
@@ -26,37 +29,38 @@ export default {
         };
     },
 
-    async created() {
-        // this.events = await fetch(
-        //     `https://api.musement.com/api/v3/venues/164/activities?&page=${this.currentPage}&limit=${this.perPage}&offset=0`,
-        // {
-        //     "method": "GET",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     }
-        // }).then(res => res.json())
-	    // .catch(error => {
-		//     console.log(error);
-        // });
-        
-        const config = {
-            headers: {
-                'Accept': "application/json"
-            }
-        };
-
+    async asyncData({ $axios, params }) {
         try {
-            const res = await axios.get('https://sandbox.musement.com/api/v3/activities?&limit=10', config);
-            
-            this.events = res.data.data;
-
-            console.log(res.data.data);
-
+            this.events = await $axios.$get(`/events/`);
+            return {
+                events
+            };
         } catch (err) {
-            console.log(err);
+            return {
+                events: []
+            };
         }
-
     },
+
+    // async created() {
+        
+    //     const config = {
+    //         headers: {
+    //             'Accept': "application/json"
+    //         }
+    //     };
+
+    //     try {
+    //         const res = await axios.get('https://sandbox.musement.com/api/v3/activities?&limit=10', config);
+    //         this.events = res.data;
+
+    //         console.log(res.data.data);
+
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+
+    // },
 }
 
 </script>
