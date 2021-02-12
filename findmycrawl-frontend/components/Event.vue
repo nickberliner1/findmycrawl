@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style scoped>
+
 .event {
     display: flex;
     padding: 1rem;
