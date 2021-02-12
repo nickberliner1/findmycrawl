@@ -1,17 +1,17 @@
 <template>
-    <!-- <nuxt-link 
-        :to="`events/${city.country.name}/${city.id}`"
-    > -->
-    <nuxt-link :to="'events/' + city.id">
+    <nuxt-link 
+        :to="'events/' + event.id"
+    >
+    <!-- <nuxt-link :to="'events/' + city.id"> -->
         <div class="event">
-            <b-img-lazy 
+            <!-- <b-img-lazy 
                 thumbnail 
                 fluid 
                 :src="pic"
                 class="cover-image"
-            ></b-img-lazy>
+            ></b-img-lazy> -->
             <div class="info">
-                <h5>{{ name }}</h5>
+                <h5>{{ event.name }}</h5>
             </div>
         </div>
     </nuxt-link>

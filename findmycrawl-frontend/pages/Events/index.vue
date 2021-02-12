@@ -3,13 +3,19 @@
         <Event 
             v-for="event in events" 
             :key="event.id"
-            :id="event.id"
             :event="event"
-            :name="event.name"
-            :pic="event.cover_image_url"
-            :city="event.city"
+            
         />
     </div>
+
+<!-- :name="event.name"
+            :pic="event.cover_image_url"
+            :city="event.city" 
+            :id="event.id"
+
+            
+            -->
+
 </template>
 
 <script>
@@ -29,38 +35,21 @@ export default {
         };
     },
 
-    async asyncData({ $axios, params }) {
+    async created() {
+        const config = {
+            headers: {
+                'Accept': "application/json"
+            }
+        };
         try {
-            this.events = await $axios.$get(`/events/`);
-            return {
-                events
-            };
+            const res = await axios.get(`http://localhost:8000/events`, config);
+            // const res = await axios.get('https://sandbox.musement.com/api/v3/activities?&limit=10', config);
+
+            this.events = res.data;
         } catch (err) {
-            return {
-                events: []
-            };
+            console.log(err)
         }
     },
-
-    // async created() {
-        
-    //     const config = {
-    //         headers: {
-    //             'Accept': "application/json"
-    //         }
-    //     };
-
-    //     try {
-    //         const res = await axios.get('https://sandbox.musement.com/api/v3/activities?&limit=10', config);
-    //         this.events = res.data;
-
-    //         console.log(res.data.data);
-
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-
-    // },
 }
 
 </script>
