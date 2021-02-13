@@ -55,6 +55,9 @@ export default {
 </script>
 
 <style scoped>
+a {
+    text-decoration: none;
+}
 .event-list {
     padding: 1rem;
 }

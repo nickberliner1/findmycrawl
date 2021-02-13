@@ -2,16 +2,21 @@
     <nuxt-link 
         :to="'events/' + event.id"
     >
-    <!-- <nuxt-link :to="'events/' + city.id"> -->
         <div class="event">
             <!-- <b-img-lazy 
                 thumbnail 
                 fluid 
-                :src="pic"
+                :src="event.main_picture"
                 class="cover-image"
             ></b-img-lazy> -->
             <div class="info">
                 <h5>{{ event.name }}</h5>
+                <!-- <font-awesome-icon
+                    icon="dollar-sign"
+                ></font-awesome-icon> -->
+                <span v-if="event.comes_with_free_drinks">
+                    <fa :icon="['far', 'lightbulb']" />
+                </span>
             </div>
         </div>
     </nuxt-link>
@@ -20,7 +25,7 @@
 <script>
 export default {
     name: "Event",
-    props: ['id', 'event', 'name', 'pic', 'city']
+    props: ['id', 'event', 'name']
 }
 </script>
 
