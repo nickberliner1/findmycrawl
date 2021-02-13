@@ -11,12 +11,10 @@
             ></b-img-lazy> -->
             <div class="info">
                 <h5>{{ event.name }}</h5>
-                <!-- <font-awesome-icon
-                    icon="dollar-sign"
-                ></font-awesome-icon> -->
                 <span v-if="event.comes_with_free_drinks">
                     <fa :icon="['far', 'lightbulb']" />
                 </span>
+                <p>{{ event.ticket_price }}</p>
             </div>
         </div>
     </nuxt-link>
