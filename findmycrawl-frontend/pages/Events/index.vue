@@ -1,10 +1,18 @@
 <template>
-    <div class="event-list">
+    <div 
+        v-if="this.apiLoaded"
+        class="event-list"
+    >
         <Event 
             v-for="event in events" 
             :key="event.id"
             :event="event"
         />
+    </div>
+    <div v-else 
+        class="no-events"
+    >
+        <h2>We're sorry, there aren't any events here</h2>
     </div>
 
 <!-- :name="event.name"
@@ -30,7 +38,8 @@ export default {
         return {
             events: [],
             currentPage: 1,
-            perPage: 10
+            perPage: 10,
+            apiLoaded: false
         };
     },
 
@@ -43,11 +52,12 @@ export default {
         try {
             const res = await axios.get(`http://localhost:8000/events`, config);
             // const res = await axios.get('https://sandbox.musement.com/api/v3/activities?&limit=10', config);
-
+            this.apiLoaded = true;
             this.events = res.data;
         } catch (err) {
             console.log(err)
         }
+        
     },
 }
 
@@ -59,5 +69,11 @@ a {
 }
 .event-list {
     padding: 1rem;
+}
+.no-events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
 }
 </style>
