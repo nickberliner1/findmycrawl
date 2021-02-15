@@ -15,6 +15,8 @@
 <script>
 import Search from '../components/Search';
 
+const apiKey = process.env.W3W_API_KEY;
+
 export default {
 	components: {
 		Search
