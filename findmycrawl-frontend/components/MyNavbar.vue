@@ -1,11 +1,13 @@
 <template>
-    <b-navbar type="dark" variant="dark">
-        <b-navbar-nav class="navbar">
+    <!-- <b-navbar type="dark" variant="dark">
+        <b-navbar-nav class="navbar"> -->
+    <nav class="navbar">
             <nuxt-link to="/" class="link">Home</nuxt-link>
             <nuxt-link to="/about" class="link">About</nuxt-link>
             <nuxt-link to="/events" class="link">Events</nuxt-link>
-        </b-navbar-nav>
-    </b-navbar>
+    </nav>
+        <!-- </b-navbar-nav>
+    </b-navbar> -->
 </template>
 
 <script>
@@ -19,10 +21,10 @@ export default {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 1rem;
+    padding: 1.7rem;
 }
 
 .link {
-    margin-right: 2rem;
+    margin-right: 5rem;
 }
 </style>
