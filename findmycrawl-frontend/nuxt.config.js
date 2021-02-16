@@ -46,7 +46,7 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
-    
+    '@nuxtjs/sitemap'
   ],
 
   // axios: {
