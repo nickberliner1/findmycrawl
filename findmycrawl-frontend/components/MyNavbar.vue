@@ -28,4 +28,9 @@ export default {
 .link {
     margin-right: 5rem;
 }
+
+.link:hover {
+    color: green;
+    text-decoration: none;
+}
 </style>
