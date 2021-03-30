@@ -6,6 +6,7 @@
 				Find Your Crawl
 				</h1>
 				<Search />
+				<div id="map"></div>
 			</div>		
 			
 		</div>
@@ -14,13 +15,27 @@
 
 <script>
 import Search from '../components/Search';
+// import { Loader, LoaderOptions } from 'google-maps';
 
-const apiKey = process.env.W3W_API_KEY;
+const w3wApiKey = process.env.W3W_API_KEY;
+const gmApiKey = process.env.GOOGLE_MAPS_API_KEY;
+
+// const options = { libraries: ['bar'] };
+// const loader = new Loader(gmApiKey, options);
 
 export default {
+	
 	components: {
 		Search
-	}
+	},
+
+	// mounted: async function() {
+	// 	const google = await loader.load();
+	// 	const map = new google.maps.Map(document.getElementById("map"), {
+	// 		center: { lat: 47.1, lng: 15.5 },
+	// 		zoom: 12
+	// 	})
+	// }
 }
 </script>
 

@@ -2,10 +2,10 @@
     <!-- <b-navbar type="dark" variant="dark">
         <b-navbar-nav class="navbar"> -->
     <nav class="navbar">
-            <nuxt-link to="/" class="link">Home</nuxt-link>
-            <nuxt-link to="/about" class="link">About</nuxt-link>
-            <nuxt-link to="/events" class="link">Events</nuxt-link>
-            <nuxt-link to="/start" class="link">Create Event</nuxt-link>
+        <nuxt-link to="/" class="link">Home</nuxt-link>
+        <nuxt-link to="/about" class="link">About</nuxt-link>
+        <nuxt-link to="/events" class="link">Events</nuxt-link>
+        <nuxt-link to="/start" class="link">Create Event</nuxt-link>
     </nav>
         <!-- </b-navbar-nav>
     </b-navbar> -->

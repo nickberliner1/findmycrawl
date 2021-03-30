@@ -52,6 +52,8 @@ export default {
         try {
             const res = await axios.get(`http://localhost:8000/events`, config);
             // const res = await axios.get('https://sandbox.musement.com/api/v3/activities?&limit=10', config);
+            console.log(res);
+            
             this.apiLoaded = true;
             this.events = res.data;
         } catch (err) {
