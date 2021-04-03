@@ -1,9 +1,10 @@
 <template>
-    <div>
+    <div class="container">
         <nuxt-link to="/events">Back</nuxt-link>
         <!-- <small>{{ $route.params.id }}</small> -->
         <!-- <p>{{ $route.params.name }}</p> -->
         <h2>{{ event.name }}</h2>
+        <img :src="event.main_picture" />
         <p>{{ event.description }}</p>
     </div>
 </template>

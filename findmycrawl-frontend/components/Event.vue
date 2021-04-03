@@ -3,12 +3,12 @@
         :to="'events/' + event.id"
     >
         <div class="event">
-            <!-- <b-img-lazy 
+            <b-img-lazy 
                 thumbnail 
                 fluid 
                 :src="event.main_picture"
                 class="cover-image"
-            ></b-img-lazy> -->
+            ></b-img-lazy>
             <div class="info">
                 <h5>{{ event.name }}</h5>
                 <span v-if="event.comes_with_free_drinks">
