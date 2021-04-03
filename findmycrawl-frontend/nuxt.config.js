@@ -36,8 +36,11 @@ export default {
         },
         {set: '@fortawesome/free-regular-svg-icons',
         icons: ['faLightbulb']
-        
-      }]
+        },
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faArrowLeft']
+        }]
     }]
   ],
 

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <nuxt-link to="/events">Back</nuxt-link>
+        <nuxt-link to="/events"><fa :icon="['fas', 'arrow-left']" /></nuxt-link>
         <!-- <small>{{ $route.params.id }}</small> -->
         <!-- <p>{{ $route.params.name }}</p> -->
         <h2>{{ event.name }}</h2>
