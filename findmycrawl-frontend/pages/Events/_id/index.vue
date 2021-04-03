@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="return">
-            <nuxt-link class="back" to="/events"><fa class="back-arrow" :icon="['fas', 'arrow-left']" />Back to events</nuxt-link>
+            <nuxt-link class="back" to="/events"><fa class="back-arrow" :icon="['fas', 'arrow-left']" /> Back to events</nuxt-link>
         </div>
         <!-- <small>{{ $route.params.id }}</small> -->
         <!-- <p>{{ $route.params.name }}</p> -->
@@ -42,15 +42,25 @@ export default {
 </script>
 
 <style scoped>
+a {
+    text-decoration: none;
+    color: black
+}
+
+a:hover {
+    color: green;
+}
+
 .return {
     margin-bottom: 2em;
 }
 
 .back-arrow {
-    display: none;
+    visibility: hidden;
 }
 
 .back:hover .back-arrow {
-    display: inline-block;
+    visibility: visible;
 }
+
 </style>
