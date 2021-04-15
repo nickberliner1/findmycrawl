@@ -28,27 +28,14 @@ export default {
 
     methods: {
         async createEvent() {
-            // await axios.post(`http://localhost:8000/events`, {
-            //     name : this.name,
-            //     ticket_price : this.ticket_price
-            // })
-            // .then(res => (this.info = res.data))
-            // .catch(err => {
-            //     console.log(err);
-            // })
-            await axios.post({
-                method: 'post',
-                url: 'http://localhost:8000/events',
-                headers: {
-                    'accept': 'application/json',
-                    "X-CSRFToken": Cookies.get('csrftoken')
-                },
-                data: {
-                    name: this.name,
-                    ticket_price: this.ticket_price
+            const res = await this.$axios.$post(
+                `http://localhost:8000/events`,
+                {
+                    name: 'name',
+                    description: 'description',
+                    ticket_price: 'ticket_price'
                 }
-            })
-            .then(response => (this.name = response.data))
+            );
         }
     }
     
