@@ -60,6 +60,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 5em;
 }
 
 .title {

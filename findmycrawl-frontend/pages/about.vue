@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <h1>About Us</h1>
-        <p>this is an app that displays bar crawls</p>
+    <div class="container">
+        <div class="heading">
+            <h1>About Us</h1>
+            <p>this is an app that displays bar crawls</p>
+        </div>
     </div>
 </template>
 
@@ -24,5 +26,15 @@ export default {
 </script>
 
 <style scoped>
+.heading {
+    position: relative;
+}
+
+.heading::after {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    background-color: green;
+}
 
 </style>

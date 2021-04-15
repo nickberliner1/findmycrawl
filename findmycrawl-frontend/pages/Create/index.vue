@@ -4,6 +4,8 @@
         <form @submit="createEvent">
             <strong>Name: </strong>
             <input type="text" v-model="name" placeholder="Name" />
+            <strong>Description: </strong>
+            <input type="textarea" v-model="description" placeholder="Describe your event" />
             <strong>Price: </strong>
             <input type="text" v-model="ticket_price" placeholder="Price" />
             <button class="btn">Submit</button>
@@ -19,6 +21,7 @@ export default {
     data() {
         return {
             name: '',
+            description: '',
             ticket_price: ''
         }
     },
@@ -33,7 +36,7 @@ export default {
             // .catch(err => {
             //     console.log(err);
             // })
-            await axios({
+            await axios.post({
                 method: 'post',
                 url: 'http://localhost:8000/events',
                 headers: {
