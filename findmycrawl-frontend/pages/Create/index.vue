@@ -8,7 +8,7 @@
             <input type="textarea" v-model="description" placeholder="Describe your event" />
             <strong>Price: </strong>
             <input type="text" v-model="ticket_price" placeholder="Price" />
-            <button class="btn">Submit</button>
+            <button class="btn" type="submit">Submit</button>
         </form>
     </div>
 </template>
@@ -27,15 +27,24 @@ export default {
     },
 
     methods: {
-        async createEvent() {
-            const res = await this.$axios.$post(
-                `http://localhost:8000/events`,
-                {
-                    name: 'name',
-                    description: 'description',
-                    ticket_price: 'ticket_price'
+        createEvent() {
+            const data = {
+                name: '',
+                description: '',
+                ticket_price: ''
+            };
+
+            axios.post(`http://localhost:8000/events/?format=api`, data, {
+                headers: {
+                    'Content-type': 'application/json'
                 }
-            );
+            })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err.res)
+            })
         }
     }
     
