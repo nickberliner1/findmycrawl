@@ -30,19 +30,26 @@ export default {
 
     methods: {
         async createEvent() {
-            const config = {
-                headers: {
-                    'content-type': 'multipart/form-data'
-                }
-            };
+            // const config = {
+            //     headers: {
+            //         'content-type': 'multipart/form-data'
+            //     }
+            // };
             
-            let formData = new FormData();
+            // let formData = new FormData();
 
-            try {
-                let response = await this.$axios.$post('http://localhost:8000/events/', formData, config);
-            } catch (e) {
-                console.log(e);
-            }
+            // try {
+            //     let response = await this.$axios.$post('http://localhost:8000/events/', formData, config);
+            // } catch (e) {
+            //     console.log(e);
+            // }
+            axios.post('http://localhost:8000/events', 
+                {
+                    name: 'test bar crawl',
+                    description: 'this is a test bar crawl',
+                    ticket_price: 20
+                }
+            )
         }
     }
     
